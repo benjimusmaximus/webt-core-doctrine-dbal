@@ -6,12 +6,12 @@ USE RPS;
 
 CREATE TABLE player (
      player_id INTEGER PRIMARY KEY,
-     name VARCHAR(50) NOT NULL,
+     name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE rps_value (
      value_id INTEGER PRIMARY KEY,
-     name VARCHAR(50) NOT NULL,
+     name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE game (
@@ -34,7 +34,7 @@ ALTER TABLE game ADD FOREIGN KEY (winner) REFERENCES player(player_id) ON DELETE
 INSERT INTO player(player_id, name) VALUES
     (1, 'Benjamin Bician'),
     (2, 'Matthias Wagner'),
-    (3, 'Anil Kapan')
+    (3, 'Anil Kapan'),
     (4, 'Max Mustermann');
 
 INSERT INTO rps_value(value_id, name) VALUES
