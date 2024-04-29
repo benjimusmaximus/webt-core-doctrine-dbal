@@ -13,6 +13,8 @@
         }
     ],
     "require": {
-        "doctrine/dbal": "^4.0"
+        "doctrine/dbal": "^4.0",
+        "doctrine/cache": "^2.2",
+        "doctrine/orm": "^3.1"
     }
 }
