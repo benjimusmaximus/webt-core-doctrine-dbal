@@ -16,6 +16,7 @@ $connectionParams = [
 
 $conn = DriverManager::getConnection($connectionParams);
 
+
 $players = [];
 $playerRows = $conn->fetchAllAssociative('SELECT * FROM player');
 foreach ($playerRows as $playerRow) {
@@ -64,7 +65,7 @@ foreach ($gameRows as $gameRow) {
     }
 
     if (($player1 && $player2) && ($valueA && $valueB)) {
-        $game = new Game($player1, $player2, $valueA, $valueB, $winner, $gameRow['date']);
+        $game = new Game($gameRow['game_id'], $player1, $player2, $valueA, $valueB, $winner, $gameRow['date']);
         $games[] = $game;
     }
 }
@@ -79,6 +80,7 @@ foreach ($games as $game) {
     $engineParam = str_replace('{value b}', $game->getValueB()->getName(), $engineParam);
     $engineParam = str_replace('{winner}', $game->getWinner()->getName(), $engineParam);
     $engineParam = str_replace('{date}', $game->getDate(), $engineParam);
+    $engineParam = str_replace('{id}', $game->getId(), $engineParam);
 }
 
 $rpsTemplate = file_get_contents("USARPSTemplate.html");

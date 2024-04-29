@@ -12,7 +12,7 @@
     }
     
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -31,6 +31,28 @@
     
     th {
       background-color: #f2f2f2;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+      border: 5px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
     }
     
     @media screen and (max-width: 600px) {
@@ -53,12 +75,26 @@
           <th>Symbol Player 2</th>
           <th>Winner</th>
           <th>Date & Time</th>
+          <th> </th>
         </tr>
       </thead>
       <tbody>
           {placeholder}
       </tbody>
     </table>
+
+    <br>
+
+    <h2>Add New Game</h2>
+    <form action="insert_game.php" method="post">
+      Player 1: <input type="text" name="player1"><br>
+      Player 2: <input type="text" name="player2"><br>
+      Value A: <input type="text" name="valueA"><br>
+      Value B: <input type="text" name="valueB"><br>
+      Winner: <input type="text" name="winner"><br>
+      Date: <input type="date" name="date"><br>
+      <input type="submit" value="Submit">
+    </form>
   </div>
 </body>
 </html>

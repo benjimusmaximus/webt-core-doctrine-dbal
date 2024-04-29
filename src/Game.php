@@ -4,6 +4,7 @@ namespace Htlw3r\DoctrineDbal;
 
 class Game
 {
+    private $id;
     private $player1;
     private $player2;
 
@@ -23,8 +24,9 @@ class Game
      * @param $winner
      * @param $date
      */
-    public function __construct($player1, $player2, $valueA, $valueB, $winner, $date)
+    public function __construct($id, $player1, $player2, $valueA, $valueB, $winner, $date)
     {
+        $this->id = $id;
         $this->player1 = $player1;
         $this->player2 = $player2;
         $this->valueA = $valueA;
@@ -81,6 +83,13 @@ class Game
         return $this->date;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
 
 
